@@ -9,10 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var redLabel: UIView!
-    @IBOutlet weak var yellowLabel: UIView!
-    @IBOutlet weak var greenLabel: UIView!
+    
+    @IBOutlet weak var redView: UIView!
+    @IBOutlet weak var yellowView: UIView!
+    @IBOutlet weak var greenView: UIView!
     @IBOutlet weak var buttonLabel: UIButton!
+
     
     enum trafficLights {
         case red, yellow, green
@@ -20,25 +22,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //interface of redLabel
-        redLabel.backgroundColor = .systemRed
-        redLabel.layer.cornerRadius = 75
-        redLabel.alpha = 0.3
         
-        //interface of yellowLabel
-        yellowLabel.backgroundColor = .systemYellow
-        yellowLabel.layer.cornerRadius = 75
-        yellowLabel.alpha = 0.3
         
-        //interface of greenLabel
-        greenLabel.backgroundColor = .systemGreen
-        greenLabel.layer.cornerRadius = 75
-        greenLabel.alpha = 0.3
+        //interface of redView
+        redView.backgroundColor = .systemRed
+        redView.layer.cornerRadius = redView.frame.width / 2
+        redView.alpha = 0.3
+        print(redView.frame.width)
+        
+        //interface of yellowView
+        yellowView.backgroundColor = .systemYellow
+        yellowView.layer.cornerRadius = yellowView.frame.width / 2
+        yellowView.alpha = 0.3
+        
+        //interface of greenView
+        greenView.backgroundColor = .systemGreen
+        greenView.layer.cornerRadius = greenView.frame.width / 2
+        greenView.alpha = 0.3
      
         //interface of buttonLabel
         buttonLabel.backgroundColor = .systemTeal
-        
-        
+
     }
 
     @IBAction func buttonPressed() {
