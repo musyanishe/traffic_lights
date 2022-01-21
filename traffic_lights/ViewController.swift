@@ -45,8 +45,31 @@ class ViewController: UIViewController {
 
     }
 
+    var activeColor = trafficLights.red
+    
     @IBAction func buttonPressed() {
-    }
+        if buttonLabel.currentTitle == "Start" {
+            buttonLabel.setTitle("Next", for: .normal)
+        }
+        switch activeColor {
+        case .red:
+            redView.alpha = 1
+            yellowView.alpha = 0.3
+            greenView.alpha = 0.3
+            activeColor = .yellow
+        case .yellow:
+            redView.alpha = 0.3
+            yellowView.alpha = 1
+            greenView.alpha = 0.3
+            activeColor = .green
+        case .green:
+            redView.alpha = 0.3
+            yellowView.alpha = 0.3
+            greenView.alpha = 1
+            activeColor = .red
+        }
+        }
+    
     
 }
 
